@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+
+</head>
+
+<body>
+<img align="middle" src="http://hi.csdn.net/attachment/201111/15/0_1321345637630X.gif" name="u" border=0
+alt="Image" style="opacity:.1; filter:alpha(opacity=20)"> 
+</body>
+<script language="JavaScript">
+function $sel(id,name){
+	if(id!=null & id!=""){
+		return document.getElementById(id);
+	}else{
+	return	document.getElementsByTagName(name);
+		}
+	}
+	
+	
+var j=0;
+var setid=setInterval(show,1);
+function show(){
+	if(j<100){
+	j++;
+						$sel("","img")[0].style.filter = "alpha(opacity="+j+")";
+						var a=(j/10);
+						if(a>9)a=9;
+						$sel("","img")[0].style.opacity = "."+a;
+						
+	}else{
+		j=0;
+		clearInterval(setid);
+		}
+	}
+</script>
+</html>

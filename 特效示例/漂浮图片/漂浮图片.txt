@@ -1,0 +1,24 @@
+<div id="ad" style="position:absolute"><a href="  http://www.cecb.cn" target="_blank"><img src="huabian1.gif" border="0"></a></div><!--//把图片img地址和url地址改成你要的路径-->
+<script> 
+var x = 50,y = 60 //浮动层的初始位置，分别对应层的初始X坐标和Y坐标 
+var xin = true, yin = true //判断层的X坐标和Y坐标是否在在控制范围之内，xin为真是层向右移动，否则向左；yin为真是层向下移动，否则向上 
+var step = 1 //层移动的步长，值越大移动速度越快 
+var delay = 10 //层移动的时间间隔,单位为毫秒，值越小移动速度越快 
+var obj=document.getElementById("ad") //捕获id为ad的层作为漂浮目标 
+function floatAD() {
+var L=T=0 //层移动范围的左边界(L)和上边界(T)坐标 
+var R= document.body.clientWidth-obj.offsetWidth //层移动的右边界 
+var B = document.body.clientHeight-obj.offsetHeight //层移动的下边界 
+obj.style.left = x + document.body.scrollLeft //更新层的X坐标，实现X轴方向上的运动；document.body.scrollLeft为文档区域的滚动条向右拉的距离，以保证在滚动条右拉时层仍在可见范围内 
+obj.style.top = y + document.body.scrollTop //更新层的Y坐标，实现Y轴方向上的运动；document.body.scrollTop为文档区域的滚动条向下拉的距离，以保证在滚动条下拉时层仍在可见范围内 
+x = x + step*(xin?1:-1) //通过判断层的范围决定层在X轴上的运动方向 
+if (x < L) { xin = true; x = L} //层超出左边界时的处理 
+if (x > R){ xin = false; x = R} //层超出右边界时的处理 
+y = y + step*(yin?1:-1) //通过判断层的范围决定层在Y轴上的运动方向 
+if (y < T) { yin = true; y = T } //层超出上边界时的处理 
+if (y > B) { yin = false; y = B } //层超出下边界时的处理
+}
+var itl= setInterval("floatAD()", delay) //每delay秒执行一次floatAD函数 
+obj.onmouseover=function(){clearInterval(itl)} //层在鼠标移上时清除上面的间隔事件，实现层在的鼠标移上时停止运动的效果 
+obj.onmouseout=function(){itl=setInterval("floatAD()", delay)} //层在鼠标移开时开始间隔事件，实现层在的鼠标移开时继续运动的效果 
+</script> 

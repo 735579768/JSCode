@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+</head>
+<body>
+<div style=" position:relative; border:1px solid #000000; width:550px; height:50px;">
+<div id="aa" style="width:50px; height:50px; background:#930; position:absolute;"></div>
+</div>
+<div id="x"></div>
+<div style=" position:relative; border:1px solid #000000; width:550px; height:50px;">
+<div id="bb" style="width:50px; height:50px; background:#0000FF; position:absolute;"></div>
+</div>
+<div id="y"></div>
+<script>
+var $ = function (id) {
+ return "string" == typeof id ? document.getElementById(id) : id;
+};
+var ss = 0;
+var s = 500;
+var tt = 300;
+var a = 2*s/(tt*tt);
+var o = $("aa");
+var i = 0;
+var t = 0;
+function run(){
+ t++;
+ i = parseInt((a*tt)*t - .5 * a * (t*t));
+ if(i>=s){ o.style.left = ss + s + "px"; return; }
+ o.style.left = ss + i + "px";
+ $("x").innerHTML+=i+",";
+ setTimeout(run, 10);
+}
+run();
+var s2 = 500;
+var o2 = $("bb");
+var i2 = 0;
+function run2(){
+ var s = (s2-i2)/100;
+ if(s>0  &&  s < 1){ s=1; };
+ if(s==0 || i2 + s>=s2){ o2.style.left = ss + s2 + "px"; return; }
+ o2.style.left = ss + i2 + s + "px";
+ i2=i2 + s;
+ $("y").innerHTML+=parseInt(i2 + s)+",";
+ setTimeout(run2, 10);
+}
+run2();
+</script>
+</body>
+</html>
+<a href="http://js.alixixi.com/">欢迎访问阿里西西网页特效代码站，js.alixixi.com</a>

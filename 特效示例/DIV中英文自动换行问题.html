@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script>
+function toBreakWord(intLen){
+var obj=document.getElementById("ff");
+var strContent=obj.innerHTML;
+var strTemp="";
+while(strContent.length>intLen){
+strTemp+=strContent.substr(0,intLen)+"<br>";
+strContent=strContent.substr(intLen,strContent.length);
+}
+strTemp+="<br>"+strContent;
+obj.innerHTML=strTemp;
+}
+if(document.getElementById  &&  !document.all)  toBreakWord(37)
+</script>
+
+</head>
+
+<body>
+<div id="ff" style="border:1px solid red;width:300px;word-wrap:break-word;"> 
+DIV+CSS模板、后台模板、图片图标下载，CSS代码实例、CSS导航菜单、CSS图表 
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  <h3><a href="http://www.865171.cn" style="color:#000;">www.865171.cn</a></h3>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<html>
+
+<head>
+<style>
+<!--
+.div {
+    position: absolute;
+    border: 2px solid red;
+    background-color: #EFEFEF;
+    line-height:90px;
+    font-size:12px;
+    z-index:1000;
+}
+-->
+</style>
+<style>
+body{
+background : #00FF00 ;}
+#b{
+margin-left : 50% ;
+margin-right : 50% ;
+width : 300px ;
+height : 200 ;
+background : #000 ;
+float : 'left' ;
+}
+#abc{
+background : #ccc ;
+}
+</style>
+<title></title>
+<script language="javascript">
+function anniu(){
+document.documentElement.background='#0000FF'
+}
+document.write(document.documentElement.scrollTop);
+</script>
+</head>
+
+<body>
+<div id="b">b</div>
+<div id="abc" class="div" style="width: 240px; height: 90px; top: 332.5px; left: 589.5px; " align="center">abc</div>
+<input type="button" name="wo" value="ÒÆ¶¯" onclick="anniu()">
+</body>
+
+<script language="javascript">
+var k=document.getElementById("abc");
+function dingwei(){
+
+k.style.background='#FF0000'
+k.style.top=(document.documentElement.scrollTop+(document.documentElement.clientHeight-document.getElementById("abc").offsetHeight)/2)+"px";
+k.style.left=(document.documentElement.scrollLeft+(document.documentElement.clientWidth-document.getElementById("abc").offsetWidth)/2)+"px";
+
+}
+window.onscroll=dingwei;
+window.onload=dingwei;
+window.onresize=dingwei;
+</script>
+</html>

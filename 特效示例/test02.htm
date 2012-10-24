@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<meta http-equiv="Content-Type" content="text/html; charset= gb2312" />
+<html>
+
+<head>
+<style>
+#diyi{ width : 200 px;  height : 100px ; background : #0000FF ;}
+</style>
+<title></title>
+<script language="javascript">
+function xinxi(){
+alert("你移动到啦网页上")
+}
+document.title="888888"
+document.vlinkColor="#00FF00"
+document.linkColor="#FF0000"
+
+</script>
+</head>
+
+<body id="body">
+<form name="myForm">
+<input type="text" name="myText" value="a o " onChange="alert('这个值变为：' + this.value);">
+</form>
+
+<a href='#' >Check Text Field</a> 
+
+<div id="diyi"></div>
+<a href="#">这是个链接</a>
+</body>
+<script language="javascript">
+var a=new Object();
+a=document.getElementById("diyi")
+window.status="欢迎到我家！！！ "
+b=document.getElementById("body")
+document.body.onclick="xinxi()"
+window.open("http://baidu.com/","myNewWindow",'height=300,width=300');
+</script>
+</html>

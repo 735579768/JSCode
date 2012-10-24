@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<html xmlns="http://www.w3.org/1999/xhtml">  
+<head>  
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
+<title>图片渐隐渐显的切换效果</title>  
+<script type="text/javascript">  
+window.onload = function()  
+{  
+    var testDiv = document.getElementById('test');  
+    testDiv.style.opacity = 1.0;  
+    testDiv.onmouseover = show;  
+    testDiv.onmouseout = hide;  
+};  
+var interval1, interval2;  
+var show = function()  
+{  
+    if(interval2) {  
+         //这里是为了当鼠标在Div渐隐的过程中移到Div上图片立即慢慢重现  
+        clearInterval(interval2);  
+    }  
+    i = document.getElementById('test').style.opacity*100;  
+    interval1 = setInterval("showRound()",20);  
+};  
+var showRound = function()  
+{  
+    i++;  
+    var testDiv = document.getElementById('test');  
+    if(testDiv.style.opacity != 1.0) {  
+        testDiv.style.opacity = i/100;  
+    } else {  
+        if(interval1) {  
+            clearInterval(interval1);  
+        }  
+    }  
+}  
+var hide = function()  
+{  
+    if(interval1) {  
+         //这里是为了当鼠标在Div渐现的过程中从Div上移走图片立即慢慢消失  
+        clearInterval(interval1);  
+    }  
+    j = document.getElementById('test').style.opacity*100;  
+    interval2 = setInterval("hideRound()",20);  
+};  
+var hideRound = function()  
+{  
+    j--;  
+    var testDiv = document.getElementById('test');  
+    if(testDiv.style.opacity != 0.0) {  
+        testDiv.style.opacity = j/100;  
+    } else {  
+        if(interval2) {  
+            clearInterval(interval2);  
+        }  
+    }  
+};  
+</script>  
+</head>  
+  
+<body>  
+<div id="test" style="width:300px; height:250px">  
+<iframe scrolling="no" width="300" height="250" frameborder="0" src="<span>http://hi.csdn.net/attachment/201111/15/0_1321345637630X.gif</span><a href="#"></a>"></iframe>  
+</div>  
+</body>  
+</html>  

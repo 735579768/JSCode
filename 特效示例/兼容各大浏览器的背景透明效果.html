@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>兼容各大浏览器的背景透明效果</title>
+<style type="text/css">
+body { background-color:#0099CC;}
+a {color:#000;}
+#snake{
+  backgournd: #666;
+  border:1px #000000 solid;
+  width:500px;
+  filter:alpha(opacity=50); /*IE*/
+  -moz-opacity:0.5; /*MOZ , FF*/
+  opacity:0.5;/*CSS3, FF1.5*/
+}
+</style>
+</head>
+
+<body>
+<div id="snake">
+<h1>兼容各大浏览器的背景透明效果</h1>
+<h3><a href="http://www.865171.cn">www.865171.cn</a></h3>
+</div>
+</body>
+</html>

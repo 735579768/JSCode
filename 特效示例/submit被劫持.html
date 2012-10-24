@@ -1,0 +1,15 @@
+<html>  
+<body>  
+    <form id="form1" action="." method="GET" onsubmit="alert('catch and do something')">  
+       <input type="button" value="提交查询" onclick="form1.submit();"/>  
+    </form>  
+    <script>  
+        var func = document.forms[0].submit;   
+       document.forms[0].submit=function(){   
+            if(this.onsubmit() != false)   
+               func.apply(this); // IE8  如果是IE6,7改为 func();   
+		alert("submit被劫持啦");        
+}   
+    </script>  
+</body>  
+</html>  

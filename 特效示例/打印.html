@@ -1,0 +1,57 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/HTML; charset=gb2312">
+<TITLE>打印</TITLE>
+
+<style>
+@media screen{.onlyShow{border:1px dashed};.onlyShow2{display:block}}
+@media print{.onlyShow{bordercolorlight:#ffffff;border:0;bordercolordark:#ffffff};.onlyShow2{display:none}}
+</style>
+</HEAD>
+<script language="javascript">
+        function btnPrintView_Click()
+        {
+                WB.ExecWB(7,1);
+        }
+        
+        function btnPrintSet_Click()
+        {
+                WB.ExecWB(8,1);
+        }
+        
+        function btnPrint_Click()
+        {
+                WB.ExecWB(6,1);
+        }
+        
+</script>
+<BODY>
+<OBJECT classid=CLSID:8856F961-340A-11D0-A96B-00C04FD705A2 height=0 id=WB width=0 VIEWASTEXT></OBJECT>
+
+<form name="form1" method="post" style="margin-bottom:0px;margin-top:0px">
+<TABLE width="100%" border="0" cellpadding="0" cellspacing="0" class="onlyshow2">
+  <TR>
+    <TD><input name="btnPrintView" type="button" class="btn" id="btnPrintView" value="打印预览" onClick="javascript:btnPrintView_Click();">
+      <input name="btnPrintSet" type="button" class="btn" id="btnPrintSet" value="页面设置" onClick="javascript:btnPrintSet_Click();">
+      <input name="btnPrint" type="button" class="btn" id="btnPrint" value="打印" onClick="javascript:btnPrint_Click();">  
+         </TD>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD>
+  </TR>
+</TABLE>
+<TABLE width='100%' border='1'>
+  <%'读取数据库内容.显示
+
+  do while not rs.EOF
+           Response.Write("<TR>") 
+           Response.Write("<TD >") 
+                   Response.write(rs.fields(字段内容))
+           Response.Write("</TD>") 
+           Response.Write("</TR>") 
+      rs.movenext
+  loop
+  %>
+</TABLE>
+</form>
+</BODY>
+</HTML>

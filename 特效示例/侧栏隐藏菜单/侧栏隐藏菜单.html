@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+*{ margin:0px;}
+body{position:relative;}
+ /*#yccd{ width:100px; height:300px; position:absolute; top:100px; background:#06F;}*/
+</style>
+
+</head>
+
+<body >
+<div id="yccd" style="left:0px;width:100px; height:300px; position:absolute; top:100px; background:#06F;" onmouseover="bianstart(1)" onmouseout="bianstart(2)">
+<div style="width:24px; height:88px; background:url(l2.gif) ;position:absolute; left:100px; top:125px;" onmouseover="bianstart(1)" onmouseout="bianstart(2)"></div>
+<ul>
+    <li><a href="#">.........</a></li>
+    <li><a href="#">.........</a></li>
+    <li><a href="#">.........</a></li>
+    <li><a href="#">.........</a></li>
+    <li><a href="#">.........</a></li>
+    <li><a href="#">.........</a></li>
+    <li><a href="#">.........</a></li>
+    <li><a href="#">.........</a></li>
+    <li><a href="#">.........</a></li>
+    <li><a href="#">.........</a></li>
+    <li><a href="#">.........</a></li>
+    <li><a href="#">.........</a></li>
+    <li><a href="#">.........</a></li>
+    <li><a href="#">.........</a></li>
+    <li><a href="#">.........</a></li>
+</ul>
+</div>
+</body >
+<script language="javascript">
+var timebool=false;
+var sf=2;
+function bianstart(zhi){
+	sf=zhi;
+	bian();
+}
+function bian(zhi){
+
+	var gaodu=document.getElementById('yccd');
+	var d=gaodu.style.left;
+		var a=parseInt(gaodu.style.left);
+	if(sf==1){
+				if(a++!=0){
+						document.getElementById('yccd').style.left=a+"px";
+						}else {timebool=true;}
+			}
+	if(sf==2){
+				if(a--!=(-100)){
+						document.getElementById('yccd').style.left=a+"px";
+						}else {timebool=true;}
+				}
+	var timeid=setTimeout("bian()",10);
+	if(timebool){clearTimeout(timeid); timebool=false;}
+	}
+	window.onload=bianstart(2);
+</script>
+</html>

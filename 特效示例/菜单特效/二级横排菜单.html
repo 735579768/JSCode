@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+<!--/*导航条开始*/-->
+.clear{clear:both}
+*{ margin:0px; padding:0px; text-align:center;}
+#nav{ position:relative;height:30px; width:100%; background:#C279DB;  color:#CCFF66;}
+#nav ul{ display:block; width:350px;  height:30px; list-style:none; margin:0 auto; position:relative;}
+#nav ul li{ display:block;list-style:none; height:26px; width:50px; background:#CC33FF; border:solid 1px #7E2D99; margin:2px 0px; color:#99FF33;text-decoration:none; line-height:26px;float:left;}
+#nav ul li:hover{ display:block; margin-top:5px;  background:#CE78D8; color:#CCFF00; }
+#tab{display:none;}
+.youblock{ display:block; position:absolute; margin-left:10px; background:#CE78D8; color:#CCFF00; }
+#nav ul li:hover #tab{display:block; position:absolute; top:30px; left:0px;}/*一个子层定位时相当于父层。当父层没有定位属性时再以祖父层为准。*/
+</style>
+
+<!--[if lte IE 6]>
+<style type="text/css">
+#nav ul li a,#nav ul li a:visited{display:block;}
+#nav ul li a:hover #tab{display:block; position:absolute; top:30px; left:0px;}
+</style>
+<![Endif]-->
+</head>
+<body>
+<div id="nav">
+<ul>
+    <li><a href="#1">111
+            <div id="tab"><!--这里要以一个层的方式显视要不下拉菜单显不出来。//-->
+            <ul>
+            <li><a href="#">111</a></li>
+            <li><a href="#">111</a></li>
+            <li><a href="#">111</a></li>
+            <li><a href="#">111</a></li>
+            <li><a href="#">111</a></li>
+            <li><a href="#">111</a></li>
+            </ul>
+            </div>
+            </a>
+    </li>
+      <li>222
+              <div id="tab"><!--这里要以一个层的方式显视要不下拉菜单显不出来。//-->
+            <ul>
+            <li><a href="#">222</a></li>
+            <li><a href="#">222</a></li>
+            <li><a href="#">222</a></li>
+            <li><a href="#">222</a></li>
+            <li><a href="#">222</a></li>
+            <li><a href="#">222</a></li>
+            </ul>
+            </div>
+      </li>
+    <li>333
+            <div id="tab"><!--这里要以一个层的方式显视要不下拉菜单显不出来。//-->
+            <ul>
+            <li><a href="#">333</a></li>
+            <li><a href="#">333</a></li>
+            <li><a href="#">333</a></li>
+            <li><a href="#">333</a></li>
+            <li><a href="#">333</a></li>
+            <li><a href="#">333</a></li>
+            </ul>
+            </div>
+    </li>
+    <li>444
+            <div id="tab"><!--这里要以一个层的方式显视要不下拉菜单显不出来。//-->
+            <ul>
+            <li><a href="#">444</a></li>
+            <li><a href="#">444</a></li>
+            <li><a href="#">444</a></li>
+            <li><a href="#">444</a></li>
+            <li><a href="#">444</a></li>
+            <li><a href="#">444</a></li>
+            </ul>
+            </div>
+    </li>
+    <li>555
+            <div id="tab"><!--这里要以一个层的方式显视要不下拉菜单显不出来。//-->
+            <ul>
+            <li><a href="#">555</a></li>
+            <li><a href="#">555</a></li>
+            <li><a href="#">555</a></li>
+            <li><a href="#">555</a></li>
+            <li><a href="#">555</a></li>
+            <li><a href="#">555</a></li>
+            </ul>
+            </div>
+    </li>
+    <li>666
+            <div id="tab"><!--这里要以一个层的方式显视要不下拉菜单显不出来。//-->
+            <ul>
+            <li><a href="#">666</a></li>
+            <li><a href="#">666</a></li>
+            <li><a href="#">666</a></li>
+            <li><a href="#">666</a></li>
+            <li><a href="#">666</a></li>
+            <li><a href="#">666</a></li>
+            </ul>
+            </div>
+    </li>
+</ul>
+</div>
+<div class="clear"></div>
+<h3  style="text-align:center; margin:30px;">以上特效仅适用用ie8/ie7</h3>
+</body>
+</html>

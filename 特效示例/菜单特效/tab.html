@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>TAB文档</title>
+<script language="javascript">
+function tabnone(id){
+	var t1=document.getElementById('tab1_sub');
+	var t2=document.getElementById('tab2_sub');	
+	var tslt1=document.getElementById('tab1_slt');
+	var tslt2=document.getElementById('tab2_slt');
+	if(id=="tab1_sub"){
+		t1.style.display='block';
+		t2.style.display='none';
+		tslt1.style.background='#0FF';
+		tslt2.style.background='#6cc';
+	}else{
+		t1.style.display='none';
+		t2.style.display='block';
+		tslt2.style.background='#0FF';
+		tslt1.style.background='#6cc';
+		}
+}
+</script>
+<style>
+*{margin:0px ; padding:0px;}
+#tab{position:relative;  width:300px; height:200px;  background:#0FF; margin:10px auto;}
+#tab_sub{width:300px; height:20px; position:relative; background: #6CC;}
+#tab1_slt,#tab2_slt{position:relative;display:block; float:left; list-style:none; width:50px; height:20px; text-align:center;}
+#tab1_slt{background:#0FF;}
+.tab1_sub{position:absolute; display:block; top:30px; left:30px; width:100%; }
+.tab2_sub{position:absolute; display:none; top:30px; left:-20px; width:100%;}
+/*#tab2_slt:hover #tab2_sub{ position:absolute; display:block; top:30px; left:-60px;}*/
+</style>
+</head>
+
+<body>
+<div id="tab">
+        <ul id="tab_sub">
+            <li id="tab1_slt" onmouseover='tabnone("tab1_sub");'>tab1
+                 <ul  class="tab1_sub" id="tab1_sub">
+                    <li>111111111</li>
+                    <li>111111111</li>
+                    <li>111111111</li>
+                    <li>111111111</li>
+                </ul>
+            </li>
+            <li   id="tab2_slt" onmouseover='tabnone("tab2_sub");'>tab2
+                <ul class="tab2_sub" id="tab2_sub">
+                    <li>2222222</li>
+                    <li>2222222</li>
+                    <li>2222222</li>
+                    <li>2222222</li>
+                </ul>
+            </li>
+         </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+
+*{ margin:0px; padding:0px;}
+#nav{margin:50px auto; width:220px;}
+#nav ul{ list-style:none;}
+#nav ul li{position:relative;float:left; }
+#nav ul li a,#nav ul li a:visited{ display:block;text-decoration:none; text-align:center;width:100px; height:30px; line-height:30px;background:#996; color:#000;  border:solid 1px #CCC; border-width:1px 1px 0 0; font-size:14px;}
+#nav ul li ul{display:none;}
+#nav ul li:hover a{background:#990; color:#000;}
+#nav ul li:hover ul{display:block; position:absolute; width:100px; top:31px; left:0px; }
+#nav ul li:hover  ul li a{ display:block; background:#9CC; color:#000;}
+#nav ul li:hover  ul li a:hover{background:#9C3; color:#000;}
+</style>
+<!--[if lte IE 6]>
+<style type="text/css">
+table {border-collapse:collapse; margin:0;padding:0;}
+#nav ul li a.hide,#nav ul li a:visited.hide{display:none;}
+#nav ul li a, #nav ul li a:visited{ background:#999966; color;#000000; height:20px;}
+#nav ul li a:hover{background:#999900; color:#000;}/*这一句是必须有的要不下一句不启作用*/
+#nav ul li a:hover ul{display:block;position:absolute; top:30px; left:0px;}
+#nav ul li  a:hover ul li a{ background:#9CC; color:#000000;}
+#nav ul li a:hover ul li a:hover{background:#99CC33; color:#000000}
+</style>
+<![endif]-->
+</head>
+
+<body>
+<div id="nav">
+<ul>
+	<li><a  class="hide" href="#2">菜单一</a>
+    <!--[if lte IE 6]>
+    <a href="#mu4">菜单一
+    <table><tr><td>
+    <![endif]-->
+    	<ul>
+        <li><a href="#1">1111</a></li>
+        <li><a href="#1">1112</a></li>
+        <li><a href="#1">1113</a></li>
+        </ul>
+    <!--[if lte IE 6]>
+    </td></tr></table>
+    </a>
+    <![endif]-->
+    </li>
+    <li><a  class="hide" href="#2">菜单二</a>
+    <!--[if lte IE 6]>
+    <a href="#mu4">菜单二
+    <table><tr><td>
+    <![endif]-->
+    	<ul>
+        <li><a href="#1">2221</a></li>
+        <li><a href="#1">2222</a></li>
+        <li><a href="#1">2223</a></li>
+        </ul>
+    <!--[if lte IE 6]>
+    </td></tr></table>
+    </a>
+    <![endif]--></li>
+</ul>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+<style>
+*{margin:0px; padding:0px;}
+#nav{margin:50px auto; padding:0px; width:220px; height:20px;}
+#nav ul{list-style:none}
+#nav ul li{position:relative; float:left;}
+#nav ul li a,#nav ul li a:visited{ display:block; text-decoration:none; width:100px; height:20px;background:#000; color:#FFF; text-align:center; line-height:20px; vertical-align:middle;  margin:0 1px; font-size:14px; border:solid 1px #999;}
+#nav ul li ul{display:none;position:absolute; left:0px; top:20px;}
+#nav ul li  a:hover{background:#993; color:#F00;}
+#nav ul li ul li a:hover{background:#9C9;}
+
+</style>
+<script language="javascript">
+function showsub(shu){
+	var sub=document.getElementById('sub'+shu);
+	sub.style.display='block';
+	}
+function hidesub(shu){
+	var sub=document.getElementById('sub'+shu);
+		sub.style.display='none';
+	}
+</script>
+<body>
+<div id="nav">
+<ul>
+	<li><a  class="hide" href="#2" onmouseover="showsub(1);" onmouseout="hidesub(1)">菜单一</a>
+    	<ul id="sub1" onmouseover="showsub(1);"onmouseout="hidesub(1);">
+        <li><a href="#1">1111</a></li>
+        <li><a href="#1">1112</a></li>
+        <li><a href="#1">1113</a></li>
+        </ul>
+    </li>
+    <li><a  class="hide" href="#2"onmouseover="showsub(2);" onmouseout="hidesub(2);">菜单二</a>
+    	<ul id="sub2" onmouseover="showsub(2);"onmouseout="hidesub(2);">
+        <li><a href="#1">2221</a></li>
+        <li><a href="#1">2222</a></li>
+        <li><a href="#1">2223</a></li>
+        </ul>
+</li>
+</ul>
+
+</div>
+</body>
+</html>

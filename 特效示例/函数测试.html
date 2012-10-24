@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script>function fullScreen(){ this.moveTo (0,0);
+this.outerWidth=screen.availWidth;this.outerHeight=screen.availHeight;}
+window.maximize=fullScreen; 
+</script>
+</head>
+
+<body>
+<div id="aa" style="width:300px; height:200px; border:solid 1px #00F;"></div>
+<a name="p" id="p" onclick="window.close()">self.close()</a><br />
+<a name="d" id="d" onclick="open('http://baidu.com','_blank','width=400,height=100,menubar=no,toolbar=no,location=no,directories=no,status=no,scrollbars=yes,resizable=yes')">打开一个窗口</a>
+<a href="#p" target="_top">一个超链接</a>
+</body>
+<script language="javascript">
+<!--
+var $ = function (id) {
+ return ("string" == typeof id )? document.getElementById(id) : id ;
+};
+document.all.aa.innerHTML=parseInt("-123aa")+"<br>";
+document.all.aa.innerHTML+=parseInt("aa-.456")+"<br>";
+document.all.aa.innerHTML+=typeof aa+"<br>";
+document.all.aa.innerHTML+=typeof 11+"<br>";
+document.all.aa.innerHTML+=typeof true+"<br>";
+document.all.aa.innerHTML+=$("aa")+"<br>";
+
+var whatsNew = open('','_blank','width=400px,height=100px,menubar=no,toolbar=no,location=no,directories=no,status=no, scrollbars=yes,resizable=yes'); 
+
+whatsNew.document.write('<center><b>更新通知</b></center>');  
+
+whatsNew.document.write('<p>最后更新日期：00.08.01');  
+
+whatsNew.document.write('<p>00.08.01 ：增加了"我的最爱"栏目。');  
+
+whatsNew.document.write('<p align="right">' +  
+
+                  '<a href="javascript:self.close()">关闭窗口</a>');  
+
+whatsNew.document.close();  
+
+function ignoreError() {  
+alert("出错啦!");
+  return true;  
+
+}  
+
+window.onerror = ignoreError; // 没有使用 "()" 
+window.onunload='open...';
+//-->
+</script>  
+
+
+</html>

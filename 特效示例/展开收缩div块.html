@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+   <script type="text/javascript">  
+         function changeDivDown(){//此为向下展开div的方法  
+            var d = document.getElementById("TLDiv");  
+            var h = d.offsetHeight;  
+            var maxh=250;  
+            function dmove(){  
+                              
+                h+=5;//展开的速度  
+                if(h>=maxh){  
+                    d.style.height='250px';  
+                    clearInterval(iIntervalId);  
+                }else{  
+                    d.style.display='block';  
+                    d.style.height=h+'px';  
+                }  
+            }  
+            iIntervalId=setInterval(dmove,2);//定时调用方法  
+        }  
+        function changeDivUp(){//此为div向上隐藏的方法  
+            var d = document.getElementById("TLDiv");  
+            var h = d.offsetHeight;  
+            var maxh=250;  
+            function dmove(){  
+                h-=5;//隐藏的速度  
+                if(h<=50){  
+                    d.style.display='block';  
+                          
+                    clearInterval(iIntervalId);  
+                }else{  
+                    d.style.height=h+'px';  
+                }  
+            }  
+            iIntervalId=setInterval(dmove,2);//定时调用方法  
+        }  
+    </script>  
+  
+  
+  
+<div id="TLDiv" style="width: 960px;height: 250px;margin-bottom: 10px;overflow: hidden;border:1px solid red;">  
+    隐藏/展开 的div的内容  
+</div>  
+  
+<input type="button" value="展开" onclick="changeDivDown()"/>  
+<input type="button" value="收缩" onclick="changeDivUp()"/> 
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+
+<body>
+<div onclick="creatediv()"  style="background:#0FF; width:300px; height:20px; margin:0 auto; font-size:12px;">点击动态生成一个div,并有一个单击事件</div>
+</body><script language=javascript>
+	function creatediv(){
+	  var newNode = document.createElement("div");
+   newNode.setAttribute("id", "divnew");
+	document.body.appendChild(newNode);
+    /* document.body.appendChild(newNode);*/
+	  div2=document.getElementById("divnew");
+	  div2.style.position = 'absolute';
+	   div2.style.background='#FF0000';	 
+	    div2.style.width='50px';
+	  div2.style.height='50px';
+	  div2.style.top='100px';
+	 /* div2.style.bottom='-50px';*/
+	  div2.style.left='50%';
+	  div2.innerHTML='请单击这个块';
+	  div2.onclick=function(){alert("这个块的单击事件调用成功")};
+	}  
+		 
+    </script> 
+</html>

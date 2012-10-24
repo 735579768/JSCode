@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+<!--
+#k {
+	height: 30px;
+	border-bottom-width: 3px;
+	border-bottom-style: solid;
+	border-bottom-color: #990000;
+	padding-left: 20px;
+	font-size: 12px;
+}
+#k ul {
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+}
+.H  {
+	height: 29px;
+	float: left;
+	line-height: 30px;
+	width: 80px;
+	text-align: center;
+	margin-right: 5px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-left-style: solid;
+	border-top-color: #CCCCCC;
+	border-right-color: #CCCCCC;
+	border-left-color: #CCCCCC;
+	display: block;
+	cursor: hand;
+}
+.V {
+	height: 29px;
+	float: left;
+	line-height: 30px;
+	width: 80px;
+	text-align: center;
+	margin-right: 5px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-left-style: solid;
+	border-top-color: #990000;
+	border-right-color: #990000;
+	border-left-color: #990000;
+	background-color: #990000;
+	display: block;
+	color: #FFFFFF;
+	cursor: hand;
+}
+.E {
+	height: 100px;
+	margin-top: 4px;
+}
+#c1 ul {
+	font-size: 12px;
+	line-height: 150%;
+	list-style-type: none;
+	margin: 0px;
+	padding-top: 5px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 12px;
+}
+#c1 a {
+	color: #333333;
+	text-decoration: none;
+	display: block;
+}
+.F {
+	height: 80px;
+	margin-top: 4px;
+}
+#c1 a:hover {
+	color: #990000;
+	text-decoration: none;
+	background-color: #CCCCCC;
+	text-align: center;
+}
+#c2 {
+	font-size: 12px;
+	color: #333333;
+	width: 300px;
+	padding-top: 5px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 12px;
+}
+-->
+</style>
+<script language="javascript">
+function T(n){
+var i;
+for(i=1;i<3;i++){
+Tab=document.getElementById("b"+i);
+Tab2=document.getElementById("c"+i);
+if(n==i){Tab.className="V";Tab2.style.display="block";}
+else{Tab.className="H";Tab2.style.display="none";}
+}
+}
+</script>
+</head>
+
+<body>
+<div id="k">
+  <ul>
+    <li class="V" id="b1" onmouseover="T(1);">第一</li>
+    <li class="H" id="b2" onmouseover="T(2);">第二</li>
+  </ul>
+</div>
+<div id="c1" class="E">
+  <ul>
+    <li><a href="#">超酷XP风格网页右键菜单</a></li>
+    <li><a href="#">通用3级联动菜单</a></li>
+    <li><a href="#">相当好玩的右键弹出菜单</a></li>
+    <li><a href="#">用CSS设计的纵向导航条实例</a> </li>
+    <li><a href="#">将网站设为首页的代码</a></li>
+  </ul>
+</div>
+<div id="c2" class="F" style="display:none;"><strong>网页特效</strong>是用程序代码在网页中实现特殊效果或者特殊功能的一种技术，它为网页活跃了气氛，增加了网站的亲和力。为网页添加特效，学会添加网页特效的过程能从一定程度上激发网页初学者更加了解HTML语言的结构。</div>
+</body>
+</html>
