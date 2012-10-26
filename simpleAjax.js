@@ -10,8 +10,15 @@
 		test : function () {
 			alert();
 		},
+
 		result : null,
 		xmlHttp : null,
+		load:function(re_file, param,re_mod, elementId){
+			var a=arguments[0] && (arguments[0].toUpperCase()=="GET")?arguments[0]:"GET"; 
+			this.startRequest( re_file, param,a,function(data){
+				$sel(elementId).innerHTML=data;
+				});
+			},
 		//创建xmlHttp对象
 		createXMLHttpRequest : function () {
 			if (window.ActiveXObject) {
@@ -26,7 +33,7 @@
 		@param re_param请求的参数，用，号分隔开如：（“1，2，3，”）
 		@param callfun回调函数  这里最好直接用一个匿名函数来代替如：function(){}
 		 */
-		startRequest : function (re_mod, re_file, param, callfun) {
+		startRequest : function ( re_file, param,re_mod, callfun) {
 			this.xmlHttp = this.createXMLHttpRequest();
 			var xmlobj = this; //把本对象赋值给一个变量是为啦兼容ie因为this对象在不同的浏览器中有不同的解释
 			xmlobj.xmlHttp.onreadystatechange = function () {
@@ -61,6 +68,7 @@
 		}
 	};
 	a.simpleAjax = ajax;
+	a.$sel=$sel;
 })(window);
 //================
 //测试ajax对象
@@ -70,6 +78,8 @@
 @param re_param请求的参数，用，号分隔开如：（“1，2，3，”）
 @param callfun回调函数  这里最好直接用一个匿名函数来代替如：function(){}
  */
-simpleAjax.startRequest("GET", "xml.xml", "act=1,act2=2", function (data) {
+simpleAjax.startRequest( "xml.xml", "act=1,act2=2","GET", function (data) {
 	alert(data);
 });
+simpleAjax.load( "xml.xml","","","test");
+
