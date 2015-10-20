@@ -1,24 +1,25 @@
-(function (a, b) {
+(function (a) {
 	
 	//======================一个简单的ajax对象===============================
-	//选择器
-	$sel = function (id) {
-		return document.getElementById(id)
-	}
-	
-	var ajax = {
-		test : function () {
-			alert();
-		},
-
-		result : null,
-		xmlHttp : null,
-		load:function(re_file, param,re_mod, elementId){
-			var a=arguments[0] && (arguments[0].toUpperCase()=="GET")?arguments[0]:"GET"; 
-			this.startRequest( re_file, param,a,function(data){
-				$sel(elementId).innerHTML=data;
-				});
-			},
+	var b=function(){
+		this.conf={
+			url:null,
+			type:'get',
+			data:{},
+			success:function(){},
+			error:function(){}
+			};
+		this.result=null;
+		this.xmlHttp=null;
+		};
+	var c=function(opt){
+		var d=new b();
+		d.extend(opt,d.conf);
+		d.conf.type=d.conf.type.toUpperCase();
+		d.ajax();
+		return d;
+		};
+	b.prototype={
 		//创建xmlHttp对象
 		createXMLHttpRequest : function () {
 			if (window.ActiveXObject) {
@@ -33,53 +34,63 @@
 		@param re_param请求的参数，用，号分隔开如：（“1，2，3，”）
 		@param callfun回调函数  这里最好直接用一个匿名函数来代替如：function(){}
 		 */
-		startRequest : function ( re_file, param,re_mod, callfun) {
+		ajax : function () {
 			this.xmlHttp = this.createXMLHttpRequest();
-			var xmlobj = this; //把本对象赋值给一个变量是为啦兼容ie因为this对象在不同的浏览器中有不同的解释
-			xmlobj.xmlHttp.onreadystatechange = function () {
-				if (xmlobj.xmlHttp.readyState == 4) {
-					xmlobj.result = xmlobj.xmlHttp.responseText
-						if (xmlobj.xmlHttp.status == 200 || xmlobj.xmlHttp.status == 500) {
-							callfun(xmlobj.result);
+			var _t = this; //把本对象赋值给一个变量是为啦兼容ie因为this对象在不同的浏览器中有不同的解释
+			var _c=_t.conf;
+			_t.xmlHttp.onreadystatechange = function () {
+				if (_t.xmlHttp.readyState == 4) {
+					_t.result = _t.xmlHttp.responseText
+						if (_t.xmlHttp.status == 200 || _t.xmlHttp.status == 500) {
+							_c.success(_t.result);
 						} else {
-							alert("ERROE:" + xmlobj.result);
-						}
+							_c.error(_t.xmlHttp);
+						}				
 				}
 			};
-			//把传进来的参数数组给分解下
-			var par_arr = param.split(",");
-			var str;
-			//判断是否有参数传递
-			if (param) {
-				str = re_file + "?";
-				for (i = 0; i <= par_arr.length; i++) {
-					if (i == par_arr.length) {
-						str += par_arr[i];
-					} else {
-						str += par_arr[i] + "&";
-					}
+			var par=null;
+			var url=_c.url;
+			for(var name in _c.data){
+				(par===null)||(par=par+"&"+name+"="+_c.data[name]);
+				(par===null)&&(par=name+"="+_c.data[name]);
 				}
-			} else {
-				str = re_file;
-			}
 			
-			xmlobj.xmlHttp.open(re_mod, str, true);
-			xmlobj.xmlHttp.send(null);
-		}
+			if(_c.type=='POST'){
+					_t.xmlHttp.open(_c.type,url, true);
+					_t.xmlHttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+				}else{
+					var str=url.split('?');
+					str[1]?(url=url+"&"+par):(url=url+"?"+par);
+					_t.xmlHttp.open(_c.type,url, true);
+				}
+			
+			_t.xmlHttp.send(par);
+			  
+			
+		},
+		/**实现功能扩展**/
+		extend:function() {
+			var arg0=arguments[0]||{};
+			var target=arguments[1]||this;
+			for(var name in arg0){
+				target[name]=arg0[name];
+				}
+			return target;	
+		},
 	};
-	a.simpleAjax = ajax;
-	a.$sel=$sel;
+	a.simpleAjax = c;
 })(window);
-//================
-//测试ajax对象
-/*发送请求
-@param re_mod请求的方法
-@param re_file请求的文件
-@param re_param请求的参数，用，号分隔开如：（“1，2，3，”）
-@param callfun回调函数  这里最好直接用一个匿名函数来代替如：function(){}
- */
-simpleAjax.startRequest( "xml.xml", "act=1,act2=2","GET", function (data) {
-	alert(data);
-});
-simpleAjax.load( "xml.xml","","","test");
-
+//使用方法
+simpleAjax({
+	url:bdurl,
+	type:'get',
+	success:function(da){
+		var re1=/百度为您找到相关结果约1个/g;
+		var arr=re1.exec(da);
+		var str='<a href="'+bdurl+'" title="百度收录" target="_blank">百度未收录</a>';
+		if(arr!=null){
+			str='<a href="'+bdurl+'" title="百度收录" target="_blank">百度已收录</a>';
+			}	
+		$sel('sl-benye').innerHTML=str;		
+		}
+	});
